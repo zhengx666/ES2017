@@ -44,6 +44,7 @@ function Promise(fn) {
         deferred.resolve(ret);
     }
 
+
     function resolve(newValue) {
         if (newValue && (typeof newValue === 'object' || typeof newValue === 'function')) {
                 newValue.then(resolve);
@@ -63,8 +64,15 @@ function Promise(fn) {
 
 function doStmWidt(mobile) {
     console.log('do sth with', mobile);
+    return new Promise((resolve,reject)=>{
+        "use strict";
+        setTimeout(()=>{
+            resolve()
+        },1000)
+    })
 }
+
 getUserId()
     .then(getUserMobileById)
-    .then(doStmWidt);
+    .then(doStmWidt)
 
