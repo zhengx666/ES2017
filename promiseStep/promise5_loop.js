@@ -17,14 +17,14 @@ function getUserMobileById(id) {
         },1000);
     });
 }
-function doStmWidt(mobile) {
+function doSthWidth(mobile) {
     console.log('do sth with', mobile);
-    // return new TPromise((resolve,reject)=>{
-    //     "use strict";
-    //     setTimeout(()=>{
-    //         resolve()
-    //     },1000)
-    // })
+    return new TPromise((resolve,reject)=>{
+        "use strict";
+        setTimeout(()=>{
+            resolve()
+        },1000)
+    })
 }
 
 function TPromise(fn) {
@@ -73,5 +73,5 @@ function TPromise(fn) {
 
 getUserId()
     .then(getUserMobileById)
-    .then(doStmWidt)
+    .then(doSthWidth)
 
