@@ -17,11 +17,10 @@ function getUserInfo() {
     });
 }
 
-
-async function gen() {
-    let uId = await getUserId();
+function* gen() {
+    let uId = yield getUserId();
     console.log("get user id " + uId);
-    let uInfo = await getUserInfo();
+    let uInfo = yield getUserInfo();
     console.log("get user Info" + uInfo);
 }
 
