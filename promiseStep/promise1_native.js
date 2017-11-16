@@ -2,15 +2,25 @@
  * Created by zhengx on 2017/11/13.
  */
 function getUserId() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(1234);
-        }, 1000)
+    return new Promise(function (resolve) {
+        console.log("start to get user id")
+        setTimeout(function () {
+            resolve(9876);
+        },1000);
     });
 }
 
-console.log("start");
-getUserId()
-    .then((data) => {
-        console.log("user id is" + data);
+function getUserMobileById(id) {
+    return new Promise(function (resolve) {
+        console.log('start to get user mobile by id:', id);
+        setTimeout(function () {
+            resolve(13810001000);
+        },1000);
     });
+}
+function doSthWidth(mobile) {
+    console.log('do sth with', mobile);
+}
+getUserId()
+    .then(getUserMobileById)
+    .then(doSthWidth)

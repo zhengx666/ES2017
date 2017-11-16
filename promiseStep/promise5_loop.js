@@ -2,7 +2,7 @@
  * Created by zhengx on 2017/11/10.
  */
 function getUserId() {
-    return new Promise(function (resolve) {
+    return new TPromise(function (resolve) {
         setTimeout(function () {
             resolve(9876);
         },1000);
@@ -10,23 +10,31 @@ function getUserId() {
 }
 
 function getUserMobileById(id) {
-    return new Promise(function (resolve) {
+    return new TPromise(function (resolve) {
         console.log('start to get user mobile by id:', id);
         setTimeout(function () {
             resolve(13810001000);
         },1000);
     });
 }
+function doStmWidt(mobile) {
+    console.log('do sth with', mobile);
+    // return new TPromise((resolve,reject)=>{
+    //     "use strict";
+    //     setTimeout(()=>{
+    //         resolve()
+    //     },1000)
+    // })
+}
 
-
-function Promise(fn) {
+function TPromise(fn) {
     console.log("Promise construct")
     var state = 'pending',
         value = null,
         deferreds = [];
 
     this.then = function (onFulfilled) {
-        return new Promise(function (resolve) {
+        return new TPromise(function (resolve) {
             handle({
                 onFulfilled: onFulfilled || null,
                 resolve: resolve
@@ -62,15 +70,6 @@ function Promise(fn) {
     fn(resolve);
 }
 
-function doStmWidt(mobile) {
-    console.log('do sth with', mobile);
-    return new Promise((resolve,reject)=>{
-        "use strict";
-        setTimeout(()=>{
-            resolve()
-        },1000)
-    })
-}
 
 getUserId()
     .then(getUserMobileById)

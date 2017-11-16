@@ -26,5 +26,11 @@ function* gen() {
 }
 
 console.log("start");
+// uId.value.then(function (data) {
+//     let uInfo = g.next(data);
+//     uInfo.value.then((data)=>{
+//         g.next(data)
+//     })
+// });
 co(gen);
 

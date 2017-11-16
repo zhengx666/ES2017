@@ -37,17 +37,3 @@ getUserId()
     .then((data) => {
         console.log("user id is" + data);
     });
-/**
- * @test2
- */
-// function getUserId() {
-//     return new TPromise((resolve, reject) => {
-//         resolve(1234);
-//     });
-// }
-//
-// console.log("start");
-// getUserId()
-//     .then((data) => {
-//         console.log("user id is" + data);
-//     });
