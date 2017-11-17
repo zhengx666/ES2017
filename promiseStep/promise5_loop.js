@@ -19,12 +19,12 @@ function getUserMobileById(id) {
 }
 function doSthWidth(mobile) {
     console.log('do sth with', mobile);
-    return new TPromise((resolve,reject)=>{
-        "use strict";
-        setTimeout(()=>{
-            resolve()
-        },1000)
-    })
+    // return new TPromise((resolve,reject)=>{
+    //     "use strict";
+    //     setTimeout(()=>{
+    //         resolve()
+    //     },1000)
+    // })
 }
 
 function TPromise(fn) {
