@@ -21,9 +21,6 @@ function TPromise(fn) {
 }
 
 
-/**
- * @test1
- */
 function getUserId() {
     return new TPromise((resolve, reject) => {
         setTimeout(() => {
@@ -31,7 +28,9 @@ function getUserId() {
         }, 1000)
     });
 }
-
+/**
+ * @test1
+ */
 console.log("start");
 getUserId()
     .then((data) => {
