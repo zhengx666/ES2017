@@ -28,7 +28,7 @@ function doSthWidth(mobile) {
 }
 
 function TPromise(fn) {
-    console.log("Promise construct")
+    // console.log("Promise construct")
     var state = 'pending',
         value = null,
         deferreds = [];
